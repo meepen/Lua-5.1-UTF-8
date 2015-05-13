@@ -309,7 +309,6 @@ function force( str )
 	local curPos, endPos = 1, #str
 
 	repeat
-		
 		local seqStartPos, seqEndPos = decode( str, curPos )
 
 		if not seqStartPos then
@@ -323,7 +322,6 @@ function force( str )
 			curPos = seqEndPos + 1
 
 		end
-
 	until curPos >= endPos
 
 	return table.concat( buf, "" )
