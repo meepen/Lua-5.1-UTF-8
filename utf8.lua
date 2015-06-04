@@ -322,7 +322,7 @@ function force( str )
 			curPos = seqEndPos + 1
 
 		end
-	until curPos >= endPos
+	until curPos > endPos
 
 	return table.concat( buf, "" )
 
