@@ -327,3 +327,27 @@ function force( str )
 	return table.concat( buf, "" )
 
 end
+
+function sub(ustr, x,y)
+
+	y = y or utf8.len(ustr)
+
+	if(y < x) then return "" end
+
+	local retval = ""
+
+	local i = 1
+
+	for k,v in utf8.codes(ustr) do
+
+		if(i >= x and i <= y) then
+			retval = retval..utf8.char(v)
+		end
+
+		i = i + 1
+
+	end
+
+	return retval
+
+end
